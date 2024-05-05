@@ -16,7 +16,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const submitHandler = async (data) => {
-    console.log("submit"); `submit`
+    console.log("submit");
+    `submit`;
   };
 
   useEffect(() => {
@@ -37,13 +38,14 @@ const Login = () => {
               <span> Task Manager </span>
             </p>
             <div className="cell">
-              <div className="circle animate-pulse opacity-10 "></div>
-              <div className="circle animate-pulse opacity-20"></div>
-              <div className="circle animate-pulse opacity-30"></div>
-              <div className="circle animate-pulse opacity-40"></div>
-              <div className="circle rotate-in-up-left"></div>
-              <div className="circle animate-pulse opacity-50 "></div>
-              <div className="circle animate-pulse opacity-60 md:opacity-100 lg:opacity-100 "></div>
+              <div className="circle animate-bounce w-10 h-10 transition-all duration-75">
+                <div className="circle animate-ping w-40 h-40 transition-all duration-75">
+                  <div className="circle animate-ping  w-30 h-30 transition-all duration-75"></div>
+                </div>
+              </div>
+              {/* 
+              <div className="circle animate-pulse opacity-40"></div> 
+              <div className="circle rotate-in-up-left"></div> */}
             </div>
           </div>
         </div>
@@ -87,8 +89,12 @@ const Login = () => {
               <span className="text-sm text-gray-500 hover:text-blue-600 hover:underline hover:font-semibold cursor-pointer">
                 Forgot Password ?
               </span>
-              <Button type="submit" label="Submit" className="w-full h-10 bg-blue-700 text-white"  >
-                  Submit
+              <Button
+                type="submit"
+                label="Submit"
+                className="w-full h-10 bg-blue-700 text-white"
+              >
+                Submit
               </Button>
             </div>
           </form>
