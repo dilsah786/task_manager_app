@@ -39,10 +39,8 @@ const Login = () => {
               <div className="circle animate-pulse opacity-10 "></div>
               <div className="circle animate-pulse opacity-20"></div>
               <div className="circle animate-pulse opacity-30"></div>
-
-              <div className="circle rotate-in-up-left"></div>
-
               <div className="circle animate-pulse opacity-40"></div>
+              <div className="circle rotate-in-up-left"></div>
               <div className="circle animate-pulse opacity-50 "></div>
               <div className="circle animate-pulse opacity-60 md:opacity-100 lg:opacity-100 "></div>
             </div>
@@ -73,6 +71,17 @@ const Login = () => {
                   required: "Email Address is required!",
                 })}
                 error={errors.email ? errors.email.message : ""}
+              />
+              <Textbox
+                placeholder="example@gmail.com"
+                type="email"
+                name="email"
+                label="Password"
+                className="w-full rounded-full"
+                register={register("email", {
+                  required: "Password is required!",
+                })}
+                error={errors.password ? errors.password.message : ""}
               />
             </div>
           </form>
