@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Textbox from "../Components/Textbox";
+import Button from "../Components/Button";
 
 const Login = () => {
   const user = "";
@@ -15,7 +16,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const submitHandler = async (data) => {
-    console.log("submitted");
+    console.log("submit"); `submit`
   };
 
   useEffect(() => {
@@ -73,16 +74,22 @@ const Login = () => {
                 error={errors.email ? errors.email.message : ""}
               />
               <Textbox
-                placeholder="example@gmail.com"
-                type="email"
+                placeholder="password"
+                type="password"
                 name="email"
                 label="Password"
                 className="w-full rounded-full"
-                register={register("email", {
+                register={register("password", {
                   required: "Password is required!",
                 })}
                 error={errors.password ? errors.password.message : ""}
               />
+              <span className="text-sm text-gray-500 hover:text-blue-600 hover:underline hover:font-semibold cursor-pointer">
+                Forgot Password ?
+              </span>
+              <Button type="submit" label="Submit" className="w-full h-10 bg-blue-700 text-white"  >
+                  Submit
+              </Button>
             </div>
           </form>
         </div>
