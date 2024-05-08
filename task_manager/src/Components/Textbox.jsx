@@ -5,7 +5,11 @@ const Textbox = React.forwardRef(
   ({ type, placeholder, name, label, className, register, error }, ref) => {
     return (
       <div className="w-full flex flex-col gap-1 ">
-        {label && <label htmlFor={name} className="text-slate-800"> {label} </label>}
+        {label && (
+          <label htmlFor={name} className="text-slate-800">
+            {label}
+          </label>
+        )}
 
         <div>
           <input
@@ -20,6 +24,9 @@ const Textbox = React.forwardRef(
               className
             )}
           />
+        </div>
+        <div>
+          <span className="text-sx text-[#f64949fe] mt-[0.5]" > {error} </span>
         </div>
       </div>
     );
